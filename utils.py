@@ -48,6 +48,46 @@ def load_data(n):
 	winner.close()
 	loser.close()
 
-	print x
-	#print y
 	return (x, np.array(y))
+
+
+def load_train():
+	winner = open('Bush/winner_train.txt', 'r')
+	loser = open('Bush/loser_train.txt', 'r')
+	x = list()
+	y = list()
+
+	print 'loading winner_train.txt...'
+	for line in winner:
+		x.append(line)
+		y.append(1)
+
+	print 'loading loser_train.txt...'
+	for line in loser:
+		x.append(line)
+		y.append(0)
+
+	winner.close()
+	loser.close()
+	return (x, y)
+
+
+def load_test():
+	winner = open('Bush/winner_test.txt', 'r')
+	loser = open('Bush/loser_test.txt', 'r')
+	x = list()
+	y = list()
+
+	print 'loading winner_test.txt...'
+	for line in winner:
+		x.append(line)
+		y.append(1)
+
+	print 'loading loser_test.txt...'
+	for line in loser:
+		x.append(line)
+		y.append(0)
+
+	winner.close()
+	loser.close()
+	return (x, y)
