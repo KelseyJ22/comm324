@@ -1,0 +1,74 @@
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+Logistic Regression Results:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+             precision    recall  f1-score   support
+
+          0       0.75      0.96      0.84      1564
+          1       0.21      0.03      0.06       522
+
+avg / total       0.61      0.73      0.64      2086
+
+[[1499   65]
+ [ 505   17]]
+GaussianNB(priors=None)
+Naive Bayes Results:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+             precision    recall  f1-score   support
+
+          0       0.78      0.52      0.62      1564
+          1       0.28      0.55      0.37       522
+
+avg / total       0.65      0.53      0.56      2086
+
+[[814 750]
+ [234 288]]
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')
+K-Nearest Neighbors Results:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+             precision    recall  f1-score   support
+
+          0       0.75      0.68      0.71      1564
+          1       0.25      0.32      0.28       522
+
+avg / total       0.62      0.59      0.60      2086
+
+[[1057  507]
+ [ 353  169]]
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')
+Decision Tree Results:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+             precision    recall  f1-score   support
+
+          0       0.75      0.76      0.76      1564
+          1       0.26      0.25      0.26       522
+
+avg / total       0.63      0.64      0.63      2086
+
+[[1194  370]
+ [ 390  132]]
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+Support Vector Machine Results:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+/usr/local/lib/python2.7/site-packages/sklearn/metrics/classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+             precision    recall  f1-score   support
+
+          0       0.75      1.00      0.86      1564
+          1       0.00      0.00      0.00       522
+
+avg / total       0.56      0.75      0.64      2086
+
+[[1564    0]
+ [ 522    0]]
