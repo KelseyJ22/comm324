@@ -1,93 +1,69 @@
 import numpy as np
 
-def pad(array, n):
-	while len(array) < n:
-		array.append('0')
-	return array
+word_ids = dict()
+word_count = 0
 
-
-def split_data(line, n, x, y, win_lose, index):
-	words = line.split() # break into words
-
-	for start_index in range(0, len(words) - n):
-		new = np.array(words[start_index:start_index + n])
-		#x = np.vstack((x, new))
-		x[index:] = new
-		y.append(win_lose)
-		index += 1
-
-	remainder = len(words) % n
-	if remainder > 0:
-		last = np.array(pad(words[(len(words) - remainder):], n)) # fill in the last <n-length ngram
-		#x = np.vstack((x, last))
-		x[index:] = last
-		y.append(win_lose)
-		index += 1
-
-	return x, y, index
-
-
-# construct a tuple (x, y) consisting of a n_samples * n_features length
-# numpy array x and an array of length n_samples containing the targets y
-def load_data(n):
-	winner = open('winner.txt', 'r')
-	loser = open('loser.txt', 'r')
-	
-	x = np.chararray([16808, 5], itemsize=10)
-	print x.shape
-	y = list()
-	index = 0
-	print 'loading winner.txt'
-	for line in winner:
-		x, y, index = split_data(line, n, x, y, 1, index)
-
-	print 'loading loser.txt'
-	for line in loser:
-		x, y, index = split_data(line, n, x, y, 0, index)
-
-	winner.close()
-	loser.close()
-
-	return (x, np.array(y))
+def lookup_word(word):
+	if word in word_ids:
+		word_id = word_ids[word]
+	else:
+		word_count += 1
+		word_ids[word] = word_count
+		word_id = word_count
+	return word_id
 
 
 def load_train():
-	winner = open('Bush/winner_train.txt', 'r')
-	loser = open('Bush/loser_train.txt', 'r')
+	winner = open('winner_train.txt', 'r')
+	loser = open('loser_train.txt', 'r')
 	x = list()
 	y = list()
 
 	print 'loading winner_train.txt...'
-	for line in winner:
-		x.append(line)
+	lines = winner.readlines()
+	split = lines.split(' ')
+	for word in split:
+		word_id = lookup_word(word)
+		x.append(word_id)
 		y.append(1)
 
 	print 'loading loser_train.txt...'
-	for line in loser:
-		x.append(line)
+	lines = loser.readlines()
+	split = lines.split(' ')
+	for word in split:
+		word_id = lookup_word(word)
+		x.append(word_id)
 		y.append(0)
 
+	print len(x)
 	winner.close()
 	loser.close()
 	return (x, y)
 
 
 def load_test():
-	winner = open('Obama/winner_test.txt', 'r')
-	loser = open('Obama/loser_test.txt', 'r')
+	winner = open('winner_test.txt', 'r')
+	loser = open('loser_test.txt', 'r')
 	x = list()
 	y = list()
 
-	print 'loading Obama: winner_test.txt...'
-	for line in winner:
-		x.append(line)
+	print 'loading winner_test.txt...'
+	lines = winner.readlines()
+	split = lines.split(' ')
+	for word in split:
+		word_id = lookup_word(word)
+		x.append(word_id)
 		y.append(1)
 
-	print 'loading Obama: loser_test.txt...'
-	for line in loser:
-		x.append(line)
+	print 'loading loser_test.txt...'
+	lines = loser.readlines()
+	split = lines.split(' ')
+	for word in split:
+		word_id = lookup_word(word)
+		x.append(word_id)
 		y.append(0)
 
+	print len(x)
 	winner.close()
 	loser.close()
 	return (x, y)

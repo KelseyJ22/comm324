@@ -13,6 +13,7 @@ avg / total       0.81      0.79      0.75      3765
 
 [[2601   44]
  [ 751  369]]
+ 
 GaussianNB(priors=None)
 Naive Bayes Results:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -28,6 +29,7 @@ avg / total       0.84      0.67      0.68      3765
 KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
            metric_params=None, n_jobs=1, n_neighbors=5, p=2,
            weights='uniform')
+
 K-Nearest Neighbors Results:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
              precision    recall  f1-score   support
@@ -44,6 +46,7 @@ DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
             min_impurity_split=1e-07, min_samples_leaf=1,
             min_samples_split=2, min_weight_fraction_leaf=0.0,
             presort=False, random_state=None, splitter='best')
+
 Decision Tree Results:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
              precision    recall  f1-score   support
@@ -59,6 +62,7 @@ SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
   decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
   max_iter=-1, probability=False, random_state=None, shrinking=True,
   tol=0.001, verbose=False)
+
 Support Vector Machine Results:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 /usr/local/lib/python2.7/site-packages/sklearn/metrics/classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.

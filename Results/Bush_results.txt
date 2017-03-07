@@ -13,6 +13,7 @@ avg / total       0.61      0.73      0.64      2086
 
 [[1499   65]
  [ 505   17]]
+
 GaussianNB(priors=None)
 Naive Bayes Results:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -25,6 +26,7 @@ avg / total       0.65      0.53      0.56      2086
 
 [[814 750]
  [234 288]]
+
 KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
            metric_params=None, n_jobs=1, n_neighbors=5, p=2,
            weights='uniform')
@@ -39,6 +41,7 @@ avg / total       0.62      0.59      0.60      2086
 
 [[1057  507]
  [ 353  169]]
+
 DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
             max_features=None, max_leaf_nodes=None,
             min_impurity_split=1e-07, min_samples_leaf=1,
@@ -55,6 +58,7 @@ avg / total       0.63      0.64      0.63      2086
 
 [[1194  370]
  [ 390  132]]
+ 
 SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
   decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
   max_iter=-1, probability=False, random_state=None, shrinking=True,

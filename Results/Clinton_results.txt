@@ -13,6 +13,7 @@ avg / total       0.74      0.75      0.69      6258
 
 [[4332  128]
  [1450  348]]
+
 GaussianNB(priors=None)
 Naive Bayes Results:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -40,6 +41,7 @@ avg / total       0.81      0.80      0.80      6258
 
 [[3726  734]
  [ 525 1273]]
+
 DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
             max_features=None, max_leaf_nodes=None,
             min_impurity_split=1e-07, min_samples_leaf=1,
@@ -56,6 +58,7 @@ avg / total       0.99      0.99      0.99      6258
 
 [[4451    9]
  [  59 1739]]
+ 
 SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
   decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
   max_iter=-1, probability=False, random_state=None, shrinking=True,
