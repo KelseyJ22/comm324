@@ -16,8 +16,15 @@ knn = KNeighborsClassifier()
 decision_tree = DecisionTreeClassifier()
 svm = SVC()
 
-train = utils.load_train()
-test = utils.load_test()
+train = utils.load_train_2016()
+test = utils.load_test_tweet()
+
+#data = utils.load_pronouns()
+#train = data[0]
+#test = data[1]
+
+#print train
+#print test
 
 train_counts = count_vect.fit_transform(train[0])
 transformer = TfidfTransformer(use_idf=False).fit(train_counts)
